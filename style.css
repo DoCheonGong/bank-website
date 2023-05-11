@@ -1,0 +1,385 @@
+@charset "UTF-8";
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+ul, li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+/* popup */
+.popup {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    min-height: 200px;
+    background-color: #f8f8f8;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 20px;
+    z-index: 10;
+    /* box-shadow: ; */
+}
+.popup h1 {
+    font: bold 27px/1 "돋움";
+    /* text-align: center; */
+    margin-bottom: 20px;
+    color: #333;
+}
+.popup p {
+    font: normal 18px/1.5 "Arial", "돋움"; 
+}
+.popup button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border: none;
+    outline: none;
+    background-color: #333;
+    padding: 5px 10px;
+    color: #eee;
+    cursor: pointer;
+}
+
+/* header */
+header {
+    width: 100%;
+    position: relative;
+}
+
+header .inner {
+    width: 100%;
+    height: 100px;
+    display: flex;
+}
+
+header .inner h1 {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .inner h1 a {
+    color: #07f;
+}
+
+header .inner .wrap {
+    flex: 4.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .inner .wrap {
+    flex: 3.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#gnb {
+    position: relative;
+    z-index: 10;
+}
+#gnb > li {
+    float: left;
+    position: relative;
+    text-align: center;
+}
+#gnb > li > a {
+    display: block;
+    width: 150px;
+    height: 60px;
+    font: bold 25px/60px "돋움";
+    color: #333;
+    background-color: #fff;
+    text-align: center;
+}
+#gnb > li > a:hover,
+#gnb > li > a.on {
+    background-color: #333;
+    color: #fff;
+}
+#gnb > li > ul {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    /* display: block; */
+}
+#gnb > li:nth-of-type(3) > .sub > li:nth-of-type(4) > a:hover,
+#gnb > li:nth-of-type(4) > .sub > li:nth-of-type(4) > a:hover {
+    color: #555;
+    background-color: #888;
+    cursor: default;
+} /* "removing" the effect when mouseover the text */
+
+.sub {
+    display: none;
+}
+
+.sub > li > a {
+    display: block;
+    width: 150px; /* #gnb와 같은 width를 가지도록 한다 */
+    height: 50px;
+    font: bold 15px/50px "돋움";
+    color: #555;
+    background-color: #888;
+    text-align: center;
+}
+.sub > li > a:hover {
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* slider */
+#slide {
+    width: 1200px;
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    font-size: 0;
+}
+
+#slide .frame {
+    display: flex;
+    width: 3600px;
+    height: 100px;
+    position: relative;
+}
+
+/* content */
+#contentBox {
+    width: 100%
+}
+#contentBox .inner {
+    width: 1200px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.board {
+    flex: 1.5;
+    height: 200px;
+    overflow: hidden;
+}
+.board .tab {
+    display: flex;
+    width: 100%;
+    height: 50px;
+}
+.board .tab li {
+    width: 100px;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.board .tab li a {
+    font: bold 15px/1 "돋움";
+    color: #fff;
+    cursor: pointer;
+}
+.board .tab li.on {
+    background-color: #fff;
+}
+.board .tab li.on a {
+    color: #333;
+}
+
+#gallery {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#gallery > a:nth-of-type(1) {
+    width: 120px;
+    height: 120px;
+    background-image: url(./images/gallery1.jpg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 200px;
+}
+#gallery > a:nth-of-type(2) {
+    width: 120px;
+    height: 120px;
+    background-image: url(./images/gallery2.jpg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 200px;
+}
+#gallery > a:nth-of-type(3) {
+    width: 120px;
+    height: 120px;
+    background-image: url(./images/gallery3.jpg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 200px;
+}
+
+.content {
+    width: 100%;
+    height: 150px;
+    position: relative;
+}
+.content div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    z-index: 1;
+}
+.content div.on {
+    opacity: 1;
+    z-index: 2;
+}
+
+#notice {
+    justify-content: flex-start;
+}
+#notice ul {
+    width: 100%;
+}
+#notice ul li {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+}
+#notice ul li:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+#notice ul li:hover { 
+    background-color: #eee;
+}
+#notice ul li a {
+    font: 13px/30px "맑은 고딕";
+    color: #333;
+    margin-left: 30px;
+    cursor: pointer;
+}
+#notice ul li span {
+    font: 10px/30px "Arial";
+    color: #333;
+    margin-right: 30px;
+}
+#gallery a {
+    opacity: 0.4;
+    transition: 1s;
+}
+#gallery a:hover {
+    opacity: 1;
+}
+/* banner */
+.banner {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-image: url(./images/banner.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 600px;
+}
+.banner p {
+    font: 18px/30px "돋움";
+    color: #fff;
+    text-align: center;
+    margin-top: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* quickLink */
+.quickLink {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px;
+    background-image: url(./images/quicklink.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 600px;
+}
+.quickLink a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.quickLink a span {
+    font: 12px/18px "돋움";
+    text-align: center;
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* footer */
+footer {
+    width: 100%;
+}
+footer .inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+footer .inner .footer_logo {
+    flex: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .inner .footer_logo a {
+    color: #000;
+}
+
+footer .inner .footer_wrap {
+    flex: 3.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footer_menu {
+    width: 100%;
+    height: 50px;
+}
+
+.footer_menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer_menu ul li {
+    margin-left: 30px;
+}
+.footer_menu ul li a {
+    font: bold 15px/50px "돋움";
+    color: #000;
+}
+
+.copyright {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.copyright span {
+    font: 12px/50px "Arial";
+    color: #333;
+}
