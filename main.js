@@ -25,7 +25,7 @@ $(document).ready(function () {
 
     /* slide */
     setInterval(function () {
-        $(".frame").animate({ "left": "-100px" },
+        $(".frame").animate({ "left": "-1200px" },
             function () {
                 $(".frame>li").eq(0).appendTo(".frame");
                 $('.frame').css({ "left": "0" });
